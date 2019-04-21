@@ -25,7 +25,6 @@ input[type="text"]{
   box-sizing: border-box;
 }
 
-/*
 input[type="password"]{
   color: #545454;
   height: 60px;
@@ -36,7 +35,6 @@ input[type="password"]{
   margin-bottom: 10px;
   box-sizing: border-box;
 }
-*/
 
 input[type="submit"]{
   border: none;

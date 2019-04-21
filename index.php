@@ -5,16 +5,16 @@ ini_set('display_errors', 'On');
 
 //1.post送信されていた場合
 if(!empty($_POST)){
-  
+
   define('MSG01', '入力必須です');
   define('MSG02', 'Emailの形式で入力して下さい');
   define('MSG03', 'パスワード（再入力）が合っていません');
   define('MSG04', '半角英数字のみご利用いただけます');
   define('MSG05', '6文字以上で入力して下さい');
-  
+
 //  $err_flg = false;
   $err_msg = array();
-  
+
 //  2.フォームが入力されていない場合
   if(empty($_POST['email'])){
     $err_msg['email'] = MSG01;
@@ -37,12 +37,12 @@ if(!empty($_POST)){
     if(!preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/", $email)){
       $err_msg['email'] = MSG02;
     }
-    
+
 //    4.パスワードとパスワード再入力が合っていない場合
     if($pass !== $pass_re){
       $err_msg['pass'] = MSG03;
     }
-    
+
     if(empty($err_msg)){
 //      5.パスワードとパスワード再入力が半角英数字でない場合
       if(!preg_match("/^[a-zA-Z0-9]+$/", $pass)){
@@ -56,11 +56,6 @@ if(!empty($_POST)){
       }
     }
   }
-
-
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -69,18 +64,7 @@ if(!empty($_POST)){
     <meta charset="UTF-8">
     <title>ホームページのタイトル</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <style>
-      input[type="password"]{
-        color: #545454;
-        height: 60px;
-        width: 100%;
-        padding: 5px 10px;
-        font-size: 16px;
-        display: block;
-        margin-bottom: 10px;
-        box-sizing: border-box;
-      }
-    </style>
+
   </head>
   <body>
 
